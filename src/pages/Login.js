@@ -39,51 +39,54 @@ const LoginSignup = () => {
     };
 
     return (
-        <LoginCSS.Container>
-            <LoginCSS.SignUpContainer signinIn={signIn}>
-                <LoginCSS.Form onSubmit={handleSignUpSubmit}>
-                    <LoginCSS.Title>Create Account</LoginCSS.Title>
-                    <LoginCSS.Input type='text' name='name' placeholder='Name' value={signUpForm.name} onChange={handleSignUpChange} />
-                    <LoginCSS.Input type='email' name='email' placeholder='Email' value={signUpForm.email} onChange={handleSignUpChange} />
-                    <LoginCSS.Input type='password' name='password' placeholder='Password' value={signUpForm.password} onChange={handleSignUpChange} />
-                    <LoginCSS.Button type='submit'>Sign Up</LoginCSS.Button>
-                </LoginCSS.Form>
-            </LoginCSS.SignUpContainer>
+        <div className="flex justify-center items-center w-screen h-screen">
 
-            <LoginCSS.SignInContainer signinIn={signIn}>
-                <LoginCSS.Form onSubmit={handleSignInSubmit}>
-                    <LoginCSS.Title>Sign in</LoginCSS.Title>
-                    <LoginCSS.Input type='email' name='email' placeholder='Email' value={signInForm.email} onChange={handleSignInChange} />
-                    <LoginCSS.Input type='password' name='password' placeholder='Password' value={signInForm.password} onChange={handleSignInChange} />
-                    <LoginCSS.Anchor href='#'>Forgot your password?</LoginCSS.Anchor>
-                    <LoginCSS.Button type='submit'>Sign In</LoginCSS.Button>
-                </LoginCSS.Form>
-            </LoginCSS.SignInContainer>
+            <LoginCSS.Container >
+                <LoginCSS.SignUpContainer signinIn={signIn}>
+                    <LoginCSS.Form onSubmit={handleSignUpSubmit}>
+                        <LoginCSS.Title>Create Account</LoginCSS.Title>
+                        <LoginCSS.Input type='text' name='name' placeholder='Name' value={signUpForm.name} onChange={handleSignUpChange} />
+                        <LoginCSS.Input type='email' name='email' placeholder='Email' value={signUpForm.email} onChange={handleSignUpChange} />
+                        <LoginCSS.Input type='password' name='password' placeholder='Password' value={signUpForm.password} onChange={handleSignUpChange} />
+                        <LoginCSS.Button type='submit'>Sign Up</LoginCSS.Button>
+                    </LoginCSS.Form>
+                </LoginCSS.SignUpContainer>
 
-            <LoginCSS.OverlayContainer signinIn={signIn}>
-                <LoginCSS.Overlay signinIn={signIn}>
-                    <LoginCSS.LeftOverlayPanel signinIn={signIn}>
-                        <LoginCSS.Title>Welcome Back!</LoginCSS.Title>
-                        <LoginCSS.Paragraph>
-                            To keep connected with us please login with your personal info
-                        </LoginCSS.Paragraph>
-                        <LoginCSS.GhostButton onClick={() => toggle(true)}>
-                            Sign In
-                        </LoginCSS.GhostButton>
-                    </LoginCSS.LeftOverlayPanel>
+                <LoginCSS.SignInContainer signinIn={signIn}>
+                    <LoginCSS.Form onSubmit={handleSignInSubmit}>
+                        <LoginCSS.Title>Sign in</LoginCSS.Title>
+                        <LoginCSS.Input type='email' name='email' placeholder='Email' value={signInForm.email} onChange={handleSignInChange} />
+                        <LoginCSS.Input type='password' name='password' placeholder='Password' value={signInForm.password} onChange={handleSignInChange} />
+                        <LoginCSS.Anchor href='#'>Forgot your password?</LoginCSS.Anchor>
+                        <LoginCSS.Button type='submit'>Sign In</LoginCSS.Button>
+                    </LoginCSS.Form>
+                </LoginCSS.SignInContainer>
 
-                    <LoginCSS.RightOverlayPanel signinIn={signIn}>
-                        <LoginCSS.Title>Hello, Friend!</LoginCSS.Title>
-                        <LoginCSS.Paragraph>
-                            Enter Your personal details and start journey with us
-                        </LoginCSS.Paragraph>
-                        <LoginCSS.GhostButton onClick={() => toggle(false)}>
-                            Sign Up
-                        </LoginCSS.GhostButton>
-                    </LoginCSS.RightOverlayPanel>
-                </LoginCSS.Overlay>
-            </LoginCSS.OverlayContainer>
-        </LoginCSS.Container>
+                <LoginCSS.OverlayContainer signinIn={signIn}>
+                    <LoginCSS.Overlay signinIn={signIn}>
+                        <LoginCSS.LeftOverlayPanel signinIn={signIn}>
+                            <LoginCSS.Title>Welcome Back!</LoginCSS.Title>
+                            <LoginCSS.Paragraph>
+                                To keep connected with us please login with your personal info
+                            </LoginCSS.Paragraph>
+                            <LoginCSS.GhostButton onClick={() => toggle(true)}>
+                                Sign In
+                            </LoginCSS.GhostButton>
+                        </LoginCSS.LeftOverlayPanel>
+
+                        <LoginCSS.RightOverlayPanel signinIn={signIn}>
+                            <LoginCSS.Title>Hello, Friend!</LoginCSS.Title>
+                            <LoginCSS.Paragraph>
+                                Enter Your personal details and start journey with us
+                            </LoginCSS.Paragraph>
+                            <LoginCSS.GhostButton onClick={() => toggle(false)}>
+                                Sign Up
+                            </LoginCSS.GhostButton>
+                        </LoginCSS.RightOverlayPanel>
+                    </LoginCSS.Overlay>
+                </LoginCSS.OverlayContainer>
+            </LoginCSS.Container>
+        </div>
     );
 };
 
